@@ -272,7 +272,7 @@ def LaunchCommand(Command, WorkingDir,ModuleAuto = None):
             f.close()
             EdkLogger.info(RespContent)
 
-        EdkLogger.error("build", COMMAND_FAILURE, ExtraData="%s [%s]" % (Command, WorkingDir))
+        EdkLogger.error("build", COMMAND_FAILURE, ExtraData="%s [%s]" % (Command, WorkingDir), RaiseError=False)
     if ModuleAuto:
         iau = IncludesAutoGen(WorkingDir,ModuleAuto)
         if ModuleAuto.ToolChainFamily == TAB_COMPILER_MSFT:
